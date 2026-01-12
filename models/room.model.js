@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 const RoomSchema = mongoose.Schema({
-  roomNumber: String,
+  roomName: {
+    type: String 
+  },
   roomType: {
     type: String,
     enum: ["Single", "Double", "Deluxe", "Suite"],
@@ -25,7 +27,13 @@ const RoomSchema = mongoose.Schema({
     default: "available",
   },
   roomfacilities: {
-    type: String,
+  images:{
+    url:[]
+  },
+  availabilites:{
+    type:String
+  }
+  
   },
 });
  
