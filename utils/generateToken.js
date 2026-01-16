@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 import { secretkey } from "../config/secrets.js";
 
-export const generateToken = (userid) => {
+export const generateToken = (id) => {
   try {
     const token = jwt.sign(
-      { userid },          
+      id  ,       
       secretkey,           
       { expiresIn: "7d" }  
     );

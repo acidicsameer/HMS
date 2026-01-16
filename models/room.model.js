@@ -32,7 +32,8 @@ const RoomSchema = mongoose.Schema({
   },
   availabilites:{
     type:String
-  }
+  },
+  
   
   },
 });

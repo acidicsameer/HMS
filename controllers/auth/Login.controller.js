@@ -16,15 +16,15 @@ export const LoginUser = async (req, res) => {
   }
   const dbPass = UserExists.password;
   console.log(dbPass);
-  const userid = UserExists._id;
+
   const MatchedPassword = await bcrypt.compare(password, dbPass);
   if (MatchedPassword) {
-    const token = generateToken({ userid });
+     const id=UserExists._id
+    const token = generateToken({id});
     console.log("tokenid", token);
     res.status(200).json({
-        message:`Successfully logged in user :${UserExists.name} `,
-        data:token
-    })
+      message: `Successfully logged in user :${UserExists.name} `,
+      data: token,
+    });
   }
-   
 };
